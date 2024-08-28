@@ -1,12 +1,11 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface CarouselProps {
-  items: any[]
-  currentIndex: number
-  setCurrentIndex: (index: number) => void
+  images: string[]
 }
 
-const Carousel = ({ images }: any) => {
+const Carousel = ({ images }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const goToPrevious = () => {
@@ -22,12 +21,14 @@ const Carousel = ({ images }: any) => {
   }
 
   return (
-    <div className='relative max-w-lg mx-auto'>
-      <div className='overflow-hidden relative'>
-        <img
+    <div className='relative w-full mx-auto pt-10'>
+      <div className='relative w-full h-96'>
+        <Image
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          className='w-full h-auto object-cover transition-transform duration-500'
+          layout='fill'
+          objectFit='cover'
+          className='transition-transform duration-500'
         />
       </div>
 
@@ -49,7 +50,7 @@ const Carousel = ({ images }: any) => {
 
       {/* Dots */}
       <div className='flex justify-center py-2'>
-        {images.map((_: any, index: any) => (
+        {images.map((_, index) => (
           <button
             key={index}
             className={`w-3 h-3 mx-1 rounded-full ${

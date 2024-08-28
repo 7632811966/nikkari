@@ -2,11 +2,15 @@
 import Image from 'next/image'
 import React from 'react'
 import { DollarSign, Filter, Menu, Moon, Star, X, Zap } from 'lucide-react'
-import imgd from '../../public/land.jpg'
-const images = [imgd, imgd, imgd, imgd]
+import image1 from '@/assets/1.jpg'
+import image2 from '@/assets/2.jpg'
+import image3 from '@/assets/3.jpg'
+import image4 from '@/assets/4.jpg'
+const images = [image1, image2, image3, image4]
 
 import Header from '@/components/elements/header'
 import Carousel from '@/components/elements/carousel'
+import TableSection from '@/components/elements/tables'
 
 export default function Home() {
   return (
@@ -123,8 +127,12 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <section className='mx-auto max-w-7xl  px-2 py-10 md:px-0'>
+        <TableSection />
+      </section>
       {/* Pricing Section */}
-      <section className='relative my-12 overflow-hidden py-10 md:my-24 lg:my-32'>
+      {/* <section className='relative my-12 overflow-hidden py-10 md:my-24 lg:my-32'>
         <div className='relative mx-auto max-w-7xl px-4'>
           <div className='mx-auto max-w-5xl'>
             <div className='flex flex-wrap items-center'>
@@ -355,9 +363,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* NewsLetter */}
-      <div className='mx-auto my-12 max-w-7xl px-2 py-2 md:my-24 lg:my-32 lg:px-0'>
+      {/* <div className='mx-auto my-12 max-w-7xl px-2 py-2 md:my-24 lg:my-32 lg:px-0'>
         <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between'>
           <div className='w-full md:w-2/3 lg:w-1/2'>
             <h2 className='text-3xl font-bold text-black'>
@@ -414,7 +422,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* footer */}
       <section className='relative overflow-hidden border-t py-10'>
         <div className='relative z-10 mx-auto max-w-5xl px-4'>
